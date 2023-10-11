@@ -17,7 +17,7 @@ requirements:
     - cuda-cupti-dev 12.0.90
     - cuda-gdb 12.0.90
     - cuda-nvdisasm 12.0.76
-    - cuda-nvprof 12.0.90
+    - cuda-nvprof 12.0.90         # [not aarch64]
     - cuda-nvtx 12.0.76
     - cuda-sanitizer-api 12.0.90
 
