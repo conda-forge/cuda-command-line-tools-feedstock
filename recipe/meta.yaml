@@ -15,9 +15,11 @@ build:
 requirements:
   run:
     - cuda-cupti-dev 12.0.90
-    - cuda-gdb 12.0.90
+    # cuda-gdb should be supported on ppc64le, but is currently broken
+    # ref https://github.com/conda-forge/cuda-gdb-feedstock/pull/4
+    - cuda-gdb 12.0.90       # [linux64 or aarch64]
     - cuda-nvdisasm 12.0.76
-    - cuda-nvprof 12.0.90         # [not aarch64]
+    - cuda-nvprof 12.0.90    # [not aarch64]
     - cuda-nvtx 12.0.76
     - cuda-sanitizer-api 12.0.90
 
