@@ -10,15 +10,18 @@ source:
 
 build:
   number: 0
-  skip: true  # [osx or win]
+  skip: true  # [osx]
 
 requirements:
   run:
     - cuda-cupti-dev 12.0.90
-    - cuda-gdb 12.0.90
+    # There is no `cuda-gdb` support on Windows so it is skipped.
+    # Also `cuda-gdb` should be supported on `ppc64le`, but is currently broken.
+    # xref: https://github.com/conda-forge/cuda-command-line-tools-feedstock/issues/6
+    - cuda-gdb 12.0.90       # [linux and not ppc64le]
     - cuda-nvdisasm 12.0.76
-    - cuda-nvprof 12.0.90         # [not aarch64]
-    - cuda-nvtx 12.0.76
+    - cuda-nvprof 12.0.90    # [not aarch64]
+    - cuda-nvtx 12.0.76      # [linux]
     - cuda-sanitizer-api 12.0.90
 
 test:
