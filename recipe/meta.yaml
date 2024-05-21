@@ -1,4 +1,4 @@
-{% set version = "12.4.1" %}
+{% set version = "12.5.0" %}
 
 package:
   name: cuda-command-line-tools
@@ -9,20 +9,20 @@ source:
   sha256: e2c71babfd18a8e69542dd7e9ca018f9caa438094001a58e6bc4d8c999bf0d07
 
 build:
-  number: 1
+  number: 0
   skip: true  # [osx]
 
 requirements:
   run:
-    - cuda-cupti-dev 12.4.127
+    - cuda-cupti-dev 12.5.39
     # There is no `cuda-gdb` support on Windows so it is skipped.
     # Also `cuda-gdb` should be supported on `ppc64le`, but is currently broken.
     # xref: https://github.com/conda-forge/cuda-command-line-tools-feedstock/issues/6
-    - cuda-gdb 12.4.127       # [linux and not ppc64le]
-    - cuda-nvdisasm 12.4.127
-    - cuda-nvprof 12.4.127    # [not aarch64]
-    - cuda-nvtx 12.4.127      # [linux]
-    - cuda-sanitizer-api 12.4.127
+    - cuda-gdb 12.5.39       # [linux and not ppc64le]
+    - cuda-nvdisasm 12.5.39
+    - cuda-nvprof 12.5.39    # [not aarch64]
+    - cuda-nvtx 12.5.39      # [linux]
+    - cuda-sanitizer-api 12.5.39
 
 test:
   commands:
